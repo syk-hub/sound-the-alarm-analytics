@@ -1,23 +1,29 @@
 # 🔥 Synthetic *Sound the Alarm* Project (2015–2025)
 
+
+## Motivation
+This project was born out of my work with the Red Cross Information & Planning group, where I helped analyze data from the *Sound the Alarm* fire safety campaign. Because the real operational data is confidential, I created a synthetic dataset that **approximates** its structure and behavior without revealing sensitive details.
+
+The dataset was built in two stages:
+- **Notebook 1:** Synthetic data generation with added realistic disturbances (seasonality, anomalies, COVID dip).  
+- **Notebook 2:** Data wrangling and cleaning to produce a structured dataset ready for analysis.  
+
+The idea was simple: show how a decade of program data can be turned into insight. From synthetic generation and cleaning, to descriptive analysis, and later predictive and prescriptive modeling. This repository demonstrates the full arc of data storytelling.
+
+This repo is recruiter-ready. It not only shows the technical steps, but also frames them in the context of a real-world program narrative.
+
+---
+
 ## Key Findings
 - Nearly **95,000 alarms installed** and **111,000 people served** across a 10-year period.  
 - Clear **COVID-era dip (2020–2021)** in installs and outreach, followed by recovery.  
 - **LA Metro dominates** (42% of installs), raising equity and resource allocation questions.  
 - **Central Coast most efficient** region (~1.30 people per install).  
 - **Weekends stronger than weekdays**, with Sunday highest — aligning with volunteer mobilization.  
-- **Installs and people served strongly correlated (0.73)**, making installs a reliable proxy KPI.  
+- **Installs and people served strongly correlated (0.73)**, making installs a reliable proxy KPI.
 
----
-
-## Motivation
-The Red Cross *Sound the Alarm* campaign has, for a decade, mobilized thousands of volunteers to install smoke alarms and provide fire safety education. Because the real operational data is confidential, this project uses a **synthetic dataset** that mirrors the structure and behavior of the program.
-
-The goal is twofold:
-1. To demonstrate how large-scale NGO programs can be analyzed in public.
-2. To showcase a clear progression of analytics skills — from **data generation & cleaning** to **descriptive analysis** and finally **predictive/prescriptive modeling**.
-
-This repo is recruiter-ready: it not only shows the technical steps, but also frames them in the context of a real-world program narrative.
+Together, these analyses reveal clear patterns in how the program operated and evolved over a decade. The highlights are summarized below.
+ 
 
 ---
 
