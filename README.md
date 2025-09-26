@@ -1,27 +1,14 @@
-# sound-the-alarm-analytics
-
-## Dataset
-- File: data/processed/synthetic_sound_the_alarm_2015_2025_clean.csv
-- Size: ~1.2 MB
-- Nature: **Synthetic** (fabricated for demonstration; no real individuals or events)
-- Purpose: Reproducible EDA + modeling examples
-- License (data): CC BY 4.0
-- SHA256: <paste hash here>
-
-This dataset is synthetic and does not contain PII or proprietary fields. Any resemblance to real records is coincidental.
-
-## Key Results (KPIs)
-- Scale: 94,956 installs; 111,341 people served (2015-01-01 → 2025-09-20)
-- Efficiency: ~1.17 people per install
-- Cadence: 3,884 active days (near-daily)
-- When: Weekends ≈ +14% vs weekdays; Sunday strongest
-- Where: LA Metro 42% of installs; Central Coast leads in people/install (~1.30)
-
-See [`reports/artifacts/eda/kpis.csv`](reports/artifacts/eda/kpis.csv) and figures in `reports/figures/eda/`.
-
-Disclaimer: This repository uses synthetic data for demonstration and learning. It is not affiliated with, endorsed by, or representing the American Red Cross. Any references to the Red Cross are for contextual, nominative use only.
-
 # 🔥 Synthetic *Sound the Alarm* Project (2015–2025)
+
+## Key Findings
+- Nearly **95,000 alarms installed** and **111,000 people served** across a 10-year period.  
+- Clear **COVID-era dip (2020–2021)** in installs and outreach, followed by recovery.  
+- **LA Metro dominates** (42% of installs), raising equity and resource allocation questions.  
+- **Central Coast most efficient** region (~1.30 people per install).  
+- **Weekends stronger than weekdays**, with Sunday highest — aligning with volunteer mobilization.  
+- **Installs and people served strongly correlated (0.73)**, making installs a reliable proxy KPI.  
+
+---
 
 ## Motivation
 The Red Cross *Sound the Alarm* campaign has, for a decade, mobilized thousands of volunteers to install smoke alarms and provide fire safety education. Because the real operational data is confidential, this project uses a **synthetic dataset** that mirrors the structure and behavior of the program.
