@@ -18,3 +18,5 @@ This dataset is synthetic and does not contain PII or proprietary fields. Any re
 - Where: LA Metro 42% of installs; Central Coast leads in people/install (~1.30)
 
 See [`reports/artifacts/eda/kpis.csv`](reports/artifacts/eda/kpis.csv) and figures in `reports/figures/eda/`.
+
+Disclaimer: This repository uses synthetic data for demonstration and learning. It is not affiliated with, endorsed by, or representing the American Red Cross. Any references to the Red Cross are for contextual, nominative use only.
