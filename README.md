@@ -10,7 +10,7 @@ The dataset was built in two stages:
 
 The idea was simple: show how a decade of program data can be turned into insight. From synthetic generation and cleaning, to descriptive analysis, and later predictive and prescriptive modeling. This repository demonstrates the full arc of data storytelling.
 
-This repo is recruiter-ready. It not only shows the technical steps, but also frames them in the context of a real-world program narrative.
+This repository highlights both the technical workflow and the real-world program context behind the analysis.
 
 ---
 
