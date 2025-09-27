@@ -108,6 +108,16 @@ Daily averages:
   - Scatterplot installs vs people (`scatter_installs_vs_people_monthly.png`)  
   - Correlation heatmap (`corr_heatmap.png`)  
 
+**Installs vs people served (monthly)**
+![Installs vs people served (monthly)](reports/figures/eda/scatter_installs_vs_people_monthly.png)
+
+**Correlation heatmap (numeric features)**
+![Correlation heatmap](reports/figures/eda/corr_heatmap.png)
+
+
+- [Numeric correlation matrix](reports/artifacts/eda/numeric_correlation.csv)
+- [Behavior-only correlation (if created)](reports/artifacts/eda/numeric_correlation_behavior_only.csv)
+
 ---
 
 ## Story of a Decade
