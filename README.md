@@ -1,4 +1,4 @@
-# 🔥 Synthetic *Sound the Alarm* Project (2015–2025)
+#  Synthetic *Sound the Alarm* Project (2015–2025)
 
 
 ## Motivation
@@ -135,9 +135,31 @@ This repository uses synthetic data for demonstration and learning. It is not af
 
 ---
 
-## Next Steps: Predictive & Prescriptive (Notebook 4)
-With descriptive analytics complete, the next phase of this project will add:
-- **Predictive modeling:** forecasting installs and people served using time-series ML.  
-- **Prescriptive analytics:** optimizing resource allocation (territories, weekdays vs weekends) to maximize impact.  
+## ML Risk Modeling and Prescriptive Analytics
 
-This layered progression — **descriptive → predictive → prescriptive** — demonstrates not only technical capability, but also the ability to tell a data-driven story from end to end.
+This section introduces a lightweight machine learning workflow designed to estimate where future fire-safety outreach efforts are likely to be needed most. Using the synthetic Sound the Alarm dataset, a binary **high-risk** label (above-median community impact) is constructed, and a Random Forest classifier is trained to predict the probability that each territory will require above-median service intensity.
+
+### Key Contributions
+
+#### 1. Feature Engineering
+Transforms installation counts, household indicators, and temporal fields into structured predictors suitable for modeling.
+
+#### 2. Binary Classification Target
+Defines:  
+- `high_risk = 1` → communities serving above the median number of people  
+- `high_risk = 0` → communities at or below the median
+
+#### 3. Model Training and Validation
+- Stratified train/test split to maintain class ratios  
+- Random Forest classifier with class weighting  
+- Performance evaluated using ROC–AUC to measure ranking quality
+
+#### 4. Predictive Risk Scoring
+Generates a `predicted_risk` probability for every record, enabling territories to be ranked by expected outreach demand.
+
+#### 5. Operational Insights
+Territories that historically show higher installation activity—such as LA Metro and Inland Empire in this synthetic dataset—also emerge with higher predicted risk scores. This indicates a consistent pattern of service demand and supports proactive allocation of volunteers, smoke alarms, and outreach scheduling.
+
+---
+
+This ML component extends the descriptive analysis and shows how community programs can evolve from retrospective reporting to **forward-looking, data-driven planning**.
