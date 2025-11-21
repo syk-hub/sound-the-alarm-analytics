@@ -1,165 +1,142 @@
-#  Synthetic *Sound the Alarm* Project (2015–2025)
+# Synthetic Sound the Alarm Project (2015–2025)
+### Data Storytelling, Descriptive Analytics, and ML-Based Risk Modeling
 
+## Overview
+This project reconstructs a decade of fire-safety outreach activity using a fully synthetic dataset. It mirrors the structure and behavior of operational Red Cross Sound the Alarm data while retaining complete privacy.
 
-## Motivation
-This project was born out of my work with the Red Cross Information & Planning group, where I analyze data from the *Sound the Alarm* fire safety campaign. Because the real operational data is confidential, I created a synthetic dataset that **approximates** its structure and behavior without revealing sensitive details.
+The workflow spans the full analytical arc:
 
-The dataset was built in two stages:
-- **Notebook 1:** Synthetic data generation with added realistic disturbances (seasonality, anomalies, COVID dip).  
-- **Notebook 2:** Data wrangling and cleaning to produce a structured dataset ready for analysis.  
+1. **Notebook 1 — Synthetic Data Generation**  
+   Programmatically creates a realistic dataset with disturbances (seasonality, anomalies, COVID decline).
 
-The idea was simple: show how a decade of program data can be turned into insight. From synthetic generation and cleaning, to descriptive analysis, and later predictive and prescriptive modeling. This repository demonstrates the full arc of data storytelling.
+2. **Notebook 2 — Cleaning & Structuring**  
+   Produces a clean analytical dataset suitable for EDA and modeling.
 
-This repository highlights both the technical workflow and the real-world program context behind the analysis.
+3. **Notebook 3 — Descriptive Analytics (EDA)**  
+   Extracts trends, geographic patterns, program cadence, and KPI relationships.
 
----
+4. **Notebook 4 — ML Risk Modeling**  
+   Builds a simple Random Forest classifier to identify communities likely to require higher service intensity.
 
-## Key Findings
-- Nearly **95,000 alarms installed** and **111,000 people served** across a 10-year period.  
-- Clear **COVID-era dip (2020–2021)** in installs and outreach, followed by recovery.  
-- **LA Metro dominates** (42% of installs), raising equity and resource allocation questions.  
-- **Central Coast most efficient** region (~1.30 people per install).  
-- **Weekends stronger than weekdays**, with Sunday highest — aligning with volunteer mobilization.  
-- **Installs and people served strongly correlated (0.73)**, making installs a reliable proxy KPI.
-
-Together, these analyses reveal clear patterns in how the program operated and evolved over a decade. The highlights are summarized below.
- 
+The repository is designed to model a complete data workflow: generation → cleaning → analysis → modeling → insight.
 
 ---
 
 ## Dataset
-- **File:** `data/processed/synthetic_sound_the_alarm_2015_2025_clean.csv`  
-- **Size:** ~1.2 MB  
-- **Nature:** Synthetic (fabricated for demonstration; no real individuals or events)  
-- **Purpose:** Reproducible EDA + modeling examples  
-- **License (data):** CC BY 4.0  
-- **SHA256:** (to be added)  
+**File:** `data/synthetic_sound_the_alarm_2015_2025_clean.csv`  
+**Nature:** Synthetic (fabricated for demonstration)  
+**License:** CC BY 4.0  
+**Purpose:** Reproducible EDA + modeling examples  
 
-### How the data was generated
-The dataset was generated programmatically to mimic Red Cross field operations. To avoid being “too clean,” realistic **disturbances** were added:
-- Random variation in installs per household.
-- Seasonal and monthly effects (spring peaks, winter troughs).
-- Geographic differences across territories.
-- A **COVID-era dip (2020–2021)** to mirror real-world disruptions.
-- Small anomalies (zero-alarm visits, outlier ratios) to reflect the messiness of field data.
+### How the Data Was Created
+The synthetic dataset includes:
 
-This ensures the dataset feels authentic and forces the same kind of wrangling and analysis steps needed in real-world analytics projects.
+- Seasonal peaks and troughs  
+- Territory differences in installation and outreach patterns  
+- Random noise, outliers, and zero-install events  
+- A multi-year COVID dip (2020–2021)  
+- Realistic daily operational cadence  
 
----
-
-## Key Results (KPIs)
-Scale of synthetic program (2015-01-01 → 2025-09-20):
-- **94,956 installs**
-- **111,341 people served**
-- **3,884 active days**
-
-Efficiency & cadence:
-- **~1.17 people per install**
-- Near-daily operations across ten years
-- **Weekends ≈ +14% vs weekdays**; Sunday strongest
-- **LA Metro = 42% of installs**
-- **Central Coast leads in efficiency** (~1.30 people per install)
-
-📂 See [reports/artifacts/eda/kpis.csv](reports/artifacts/eda/kpis.csv)  
-📈 See figures in `reports/figures/eda/`
+This structure ensures realistic analytical challenges similar to field operations.
 
 ---
 
-## Descriptive Analysis (EDA)
+## Key Findings (2015–2025)
 
-### Trends Over Time
-From **2015–2019**, yearly installs grew steadily (8.4k → 9.5k), with people served climbing in parallel.  
-In **2020–2021**, activity dipped sharply (COVID effect), before recovering in **2022–2025**. By September 2025, the program had already logged **6,734 installs and 8,172 people served**.  
+### Scale and Activity
+- ~95,000 smoke alarms installed  
+- ~111,000 people served  
+- ~3,800 operational days  
 
-- **Charts:**  
-  - Yearly installs & people served (`yearly_installs.png`)  
-  - Monthly people served (`monthly_people_served.png`)  
+### Program Patterns
+- Strong pre-COVID growth, visible COVID disruption, post-COVID recovery  
+- LA Metro dominates in volume (~42% of installs)  
+- Central Coast is most efficient (~1.30 people per install)  
+- Weekends outperform weekdays; Sunday highest  
+- Installations and people served strongly correlated (r ≈ 0.73)
 
----
-
-### Geographic Reach
-Not all territories contributed equally:
-- **LA Metro dominates (40,036 installs, 45,391 people)**  
-- **Inland Empire** and **Orange County** together add ~35k installs and ~42k people  
-- **Central Coast** is smaller in size but most efficient (1.30 people per install)  
-
-- **Chart:** Top 15 territories by installs (`territory_top15_installs.png`)
+These patterns reveal how the synthetic campaign evolved geographically and operationally.
 
 ---
 
-### Timing of Effort
-Daily averages:
-- **Weekdays:** ~3.6 installs, ~4.1 people served/day  
-- **Weekends:** ~3.8 installs, ~4.7 people served/day  
-- **Sunday strongest overall**  
+## Descriptive Analysis (Notebook 3)
 
-- **Charts:**  
-  - Day-of-week averages (`dow_mean_installs.png`)  
-  - Weekend vs weekday (`weekend_means.png`)  
+Notebook 3 examines trends, geography, timing, and cross-metric relationships.  
+Only key figures are linked below; the full set is in:
 
----
+- `outputs/figures/eda/`  
+- `outputs/tables/eda/`
+
+### Time Trends
+- Yearly installs gradually increase 2015–2019  
+- Sharp contraction in 2020–2021  
+- Recovery afterward through 2025  
+
+**Figure:** `outputs/figures/eda/yearly_installs_people.png`
+
+### Geographic Patterns
+- LA Metro: highest install and outreach volume  
+- Inland Empire + Orange County: substantial combined region  
+- Central Coast: highest efficiency  
+
+**Figure:** `outputs/figures/eda/territory_top15_installs.png`
+
+### Operational Timing
+- Weekends consistently stronger  
+- Sunday highest activity  
+
+**Figure:** `outputs/figures/eda/dow_mean_installs.png`
 
 ### Cross-Metric Relationships
-- **Installs ↔ People served:** correlation **0.73** (strong positive)  
-- **Installs ↔ Fire escape plans:** ~0 (independent)  
-- **People served ↔ Hazard education:** ~0 (independent)  
+- Strong installs ↔ people correlation  
+- Weak correlation for escape plans and hazard education  
 
-- **Charts:**  
-  - Scatterplot installs vs people (`scatter_installs_vs_people_monthly.png`)  
-  - Correlation heatmap (`corr_heatmap.png`)  
+**Figure:** `outputs/figures/eda/corr_heatmap.png`
 
-**Installs vs people served (monthly)**
-![Installs vs people served (monthly)](reports/figures/eda/scatter_installs_vs_people_monthly.png)
-
-**Correlation heatmap (numeric features)**
-![Correlation heatmap](reports/figures/eda/corr_heatmap.png)
-
-
-- [Numeric correlation matrix](reports/artifacts/eda/numeric_correlation.csv)
-- [Behavior-only correlation (if created)](reports/artifacts/eda/numeric_correlation_behavior_only.csv)
+These EDA results provide the contextual foundation for the ML component.
 
 ---
 
-## Story of a Decade
-This synthetic dataset captures the arc of a real campaign:
-- A decade of steady growth.
-- A sharp but temporary COVID disruption.
-- Geographic concentration in major metros, balanced by smaller regions.
-- Volunteer mobilization patterns strongest on weekends.
-- A reliable proxy KPI: **alarms installed** as shorthand for total program impact.
+## ML Risk Modeling (Notebook 4)
+
+This section demonstrates how descriptive insights transition into predictive analytics.
+
+### Objective
+Identify territories likely to require higher outreach intensity (above-median community impact).
+
+### Modeling Steps
+1. **Feature Engineering**  
+   Transforms operational metrics into structured predictors.
+
+2. **Target Construction**  
+   `high_risk = 1` for above-median community impact.
+
+3. **Model Training**  
+   - Random Forest classifier  
+   - Stratified train/test split  
+   - Weighted classes to address imbalance  
+
+4. **Evaluation**  
+   ROC-AUC used to measure ranking performance.
+
+5. **Risk Scoring & Ranking**  
+   Each territory receives a `predicted_risk` probability.
+
+### Key Outputs
+- **Feature Importances:**  
+  `outputs/figures/ml_feature_importances_notebook4.png`  
+  `outputs/tables/ml_feature_importances_notebook4.csv`
+
+- **Territory Risk Ranking (Styled):**  
+  `outputs/figures/ml_territory_risk_ranking_notebook4.html`  
+  `outputs/tables/ml_territory_risk_ranking_notebook4.csv`
+
+### ML Insight
+Territories historically showing higher installation activity also tend to receive higher predicted risk scores, reinforcing the relationship between program cadence and expected future demand.
+
+The ML pipeline shows how community programs can evolve from retrospective reporting to forward-looking, data-driven planning.
 
 ---
 
 ## Disclaimer
-This repository uses synthetic data for demonstration and learning. It is not affiliated with, endorsed by, or representing the American Red Cross. Any references to the Red Cross are for contextual, nominative use only.
-
----
-
-## ML Risk Modeling and Prescriptive Analytics
-
-This section introduces a lightweight machine learning workflow designed to estimate where future fire-safety outreach efforts are likely to be needed most. Using the synthetic Sound the Alarm dataset, a binary **high-risk** label (above-median community impact) is constructed, and a Random Forest classifier is trained to predict the probability that each territory will require above-median service intensity.
-
-### Key Contributions
-
-#### 1. Feature Engineering
-Transforms installation counts, household indicators, and temporal fields into structured predictors suitable for modeling.
-
-#### 2. Binary Classification Target
-Defines:  
-- `high_risk = 1` → communities serving above the median number of people  
-- `high_risk = 0` → communities at or below the median
-
-#### 3. Model Training and Validation
-- Stratified train/test split to maintain class ratios  
-- Random Forest classifier with class weighting  
-- Performance evaluated using ROC–AUC to measure ranking quality
-
-#### 4. Predictive Risk Scoring
-Generates a `predicted_risk` probability for every record, enabling territories to be ranked by expected outreach demand.
-
-#### 5. Operational Insights
-Territories that historically show higher installation activity—such as LA Metro and Inland Empire in this synthetic dataset—also emerge with higher predicted risk scores. This indicates a consistent pattern of service demand and supports proactive allocation of volunteers, smoke alarms, and outreach scheduling.
-
----
-
-This ML component extends the descriptive analysis and shows how community programs can evolve from retrospective reporting to **forward-looking, data-driven planning**.
+This repository uses synthetic data for educational and demonstration purposes. It is not affiliated with, endorsed by, or representing the American Red Cross. Any references to the Red Cross are contextual only.
