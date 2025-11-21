@@ -64,22 +64,22 @@ These patterns reveal how the synthetic campaign evolved geographically and oper
 Notebook 3 examines trends, geography, timing, and cross-metric relationships.  
 Only key figures are linked below; the full set is in:
 
-- `outputs/figures/eda/`  
-- `outputs/tables/eda/`
+- [figures](outputs/figures)  
+- [tables](outputs/tables)
 
 ### Time Trends
 - Yearly installs gradually increase 2015–2019  
 - Sharp contraction in 2020–2021  
 - Recovery afterward through 2025  
 
-**Figure:** [yearly_installs_people.png](outputs/figures/eda/yearly_installs_people.png)
+**Figure:** [yearly_installs_people.png](outputs/figures/yearly_installs_people.png)
 
 ### Geographic Patterns
 - LA Metro: highest install and outreach volume  
 - Inland Empire + Orange County: substantial combined region  
 - Central Coast: highest efficiency  
 
-**Figure:** [territory_top15_installs.png](outputs/figures/eda/territory_top15_installs.png)
+**Figure:** [territory_top15_installs.png](outputs/figures/territory_top15_installs.png)
 
 ### Operational Timing
 - Weekends consistently stronger  
@@ -91,7 +91,7 @@ Only key figures are linked below; the full set is in:
 - Strong installs ↔ people correlation  
 - Weak correlation for escape plans and hazard education  
 
-**Figure:** [corr_heatmap.png](outputs/figures/corr_heatmap.png)
+**Figure:** [corr_behavior_heatmap.png](outputs/figures/corr_behavior_heatmap.png)
 
 These EDA results provide the contextual foundation for the ML component.
 
