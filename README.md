@@ -2,7 +2,7 @@
 
 
 ## Motivation
-This project was born out of my work with the Red Cross Information & Planning group, where I helped analyze data from the *Sound the Alarm* fire safety campaign. Because the real operational data is confidential, I created a synthetic dataset that **approximates** its structure and behavior without revealing sensitive details.
+This project was born out of my work with the Red Cross Information & Planning group, where I analyze data from the *Sound the Alarm* fire safety campaign. Because the real operational data is confidential, I created a synthetic dataset that **approximates** its structure and behavior without revealing sensitive details.
 
 The dataset was built in two stages:
 - **Notebook 1:** Synthetic data generation with added realistic disturbances (seasonality, anomalies, COVID dip).  
