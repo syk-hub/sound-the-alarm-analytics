@@ -72,7 +72,7 @@ Only key figures are linked below; the full set is in:
 - Sharp contraction in 2020–2021  
 - Recovery afterward through 2025  
 
-**Figure:** [yearly_installs_people.png](outputs/figures/yearly_installs_people.png)
+**Figure:** [yearly_installs.png](outputs/figures/yearly_installs.png)
 
 ### Geographic Patterns
 - LA Metro: highest install and outreach volume  
