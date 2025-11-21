@@ -23,7 +23,7 @@ The repository is designed to model a complete data workflow: generation → cle
 ---
 
 ## Dataset
-**File:** `data/synthetic_sound_the_alarm_2015_2025_clean.csv`  
+**File:** [synthetic_sound_the_alarm_2015_2025_clean.csv](data/synthetic_sound_the_alarm_2015_2025_clean.csv)  
 **Nature:** Synthetic (fabricated for demonstration)  
 **License:** CC BY 4.0  
 **Purpose:** Reproducible EDA + modeling examples  
@@ -72,26 +72,26 @@ Only key figures are linked below; the full set is in:
 - Sharp contraction in 2020–2021  
 - Recovery afterward through 2025  
 
-**Figure:** `outputs/figures/eda/yearly_installs_people.png`
+**Figure:** [yearly_installs_people.png](outputs/figures/eda/yearly_installs_people.png)
 
 ### Geographic Patterns
 - LA Metro: highest install and outreach volume  
 - Inland Empire + Orange County: substantial combined region  
 - Central Coast: highest efficiency  
 
-**Figure:** `outputs/figures/eda/territory_top15_installs.png`
+**Figure:** [territory_top15_installs.png](outputs/figures/eda/territory_top15_installs.png)
 
 ### Operational Timing
 - Weekends consistently stronger  
 - Sunday highest activity  
 
-**Figure:** `outputs/figures/eda/dow_mean_installs.png`
+**Figure:** [dow_mean_installs.png](outputs/figures/dow_mean_installs.png)
 
 ### Cross-Metric Relationships
 - Strong installs ↔ people correlation  
 - Weak correlation for escape plans and hazard education  
 
-**Figure:** `outputs/figures/eda/corr_heatmap.png`
+**Figure:** [corr_heatmap.png](outputs/figures/corr_heatmap.png)
 
 These EDA results provide the contextual foundation for the ML component.
 
@@ -124,12 +124,12 @@ Identify territories likely to require higher outreach intensity (above-median c
 
 ### Key Outputs
 - **Feature Importances:**  
-  `outputs/figures/ml_feature_importances_notebook4.png`  
-  `outputs/tables/ml_feature_importances_notebook4.csv`
+  [ml_feature_importances_notebook4.png](outputs/figures/ml_feature_importances_notebook4.png)  
+  [ml_feature_importances_notebook4.csv](outputs/tables/ml_feature_importances_notebook4.csv)
 
 - **Territory Risk Ranking (Styled):**  
-  `outputs/figures/ml_territory_risk_ranking_notebook4.html`  
-  `outputs/tables/ml_territory_risk_ranking_notebook4.csv`
+  [ml_territory_risk_ranking_notebook4.html](outputs/figures/ml_territory_risk_ranking_notebook4.html)  
+  [ml_territory_risk_ranking_notebook4.csv](outputs/tables/ml_territory_risk_ranking_notebook4.csv)
 
 ### ML Insight
 Territories historically showing higher installation activity also tend to receive higher predicted risk scores, reinforcing the relationship between program cadence and expected future demand.
