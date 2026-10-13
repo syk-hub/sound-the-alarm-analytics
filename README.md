@@ -2,7 +2,7 @@
 ### Data Storytelling, Descriptive Analytics, and ML-Based Risk Modeling
 
 ## Overview
-This project reconstructs a decade of fire-safety outreach activity using a fully synthetic dataset. It mirrors the structure and behavior of operational Red Cross Sound the Alarm data while retaining complete privacy.
+This independent demonstration reproduces the structure of a data-preparation and reporting workflow developed through my fire-safety outreach volunteer work. All data in this repository are synthetic; no confidential operational records are included. The synthetic totals and patterns shown below are demonstration results, not actual American Red Cross program outcomes.
 
 The workflow spans the full analytical arc:
 
@@ -15,7 +15,7 @@ The workflow spans the full analytical arc:
 3. **Notebook 3 — Descriptive Analytics (EDA)**  
    Extracts trends, geographic patterns, program cadence, and KPI relationships.
 
-4. **Notebook 4 — ML Risk Modeling**  
+4. **Notebook 4 — ML Classification Demonstration**  
    Builds a simple Random Forest classifier to identify communities likely to require higher service intensity.
 
 The repository is designed to model a complete data workflow: generation → cleaning → analysis → modeling → insight.
@@ -41,7 +41,7 @@ This structure ensures realistic analytical challenges similar to field operatio
 
 ---
 
-## Key Findings (2015–2025)
+## Synthetic Dataset Results (2015–2025)
 
 ### Scale and Activity
 - ~95,000 smoke alarms installed  
@@ -51,7 +51,7 @@ This structure ensures realistic analytical challenges similar to field operatio
 ### Program Patterns
 - Strong pre-COVID growth, visible COVID disruption, post-COVID recovery  
 - LA Metro dominates in volume (~42% of installs)  
-- Central Coast is most efficient (~1.30 people per install)  
+- Central Coast has the highest people-served-per-installation ratio (~1.30 people per install)  
 - Weekends outperform weekdays; Sunday highest  
 - Installations and people served strongly correlated (r ≈ 0.73)
 
@@ -97,7 +97,7 @@ These EDA results provide the contextual foundation for the ML component.
 
 ---
 
-## ML Risk Modeling (Notebook 4)
+## ML Classification Demonstration (Notebook 4)
 
 This section demonstrates how descriptive insights transition into predictive analytics.
 
@@ -131,10 +131,11 @@ Identify territories likely to require higher outreach intensity (above-median c
   [ml_territory_risk_ranking_notebook4.html](outputs/figures/ml_territory_risk_ranking_notebook4.html)  
   [ml_territory_risk_ranking_notebook4.csv](outputs/tables/ml_territory_risk_ranking_notebook4.csv)
 
-### ML Insight
-Territories historically showing higher installation activity also tend to receive higher predicted risk scores, reinforcing the relationship between program cadence and expected future demand.
+### Interpretation and Limitations
 
-The ML pipeline shows how community programs can evolve from retrospective reporting to forward-looking, data-driven planning.
+In this synthetic dataset, installation activity is associated with the number of people served, so it helps classify above-median service-volume records. This demonstrates relationships within the generated data rather than establishing real-world community risk.
+
+The project demonstrates data preparation, descriptive analysis, and supervised classification. Forecasting future outreach demand would require a defined future outcome, predictors available before that outcome, and evaluation on later time periods.
 
 ---
 
