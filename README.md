@@ -1,5 +1,5 @@
 # Synthetic Sound the Alarm Project (2015–2025)
-### Data Storytelling, Descriptive Analytics, and ML-Based Risk Modeling
+### Data Storytelling, Descriptive Analytics, and ML Classification
 
 ## Overview
 This independent demonstration reproduces the structure of a data-preparation and reporting workflow developed through my fire-safety outreach volunteer work. All data in this repository are synthetic; no confidential operational records are included. The synthetic totals and patterns shown below are demonstration results, not actual American Red Cross program outcomes.
@@ -16,7 +16,7 @@ The workflow spans the full analytical arc:
    Extracts trends, geographic patterns, program cadence, and KPI relationships.
 
 4. **Notebook 4 — ML Classification Demonstration**  
-   Builds a simple Random Forest classifier to identify communities likely to require higher service intensity.
+   Builds a Random Forest classifier for outreach records with above-median people served.
 
 The repository is designed to model a complete data workflow: generation → cleaning → analysis → modeling → insight.
 
@@ -51,7 +51,7 @@ This structure ensures realistic analytical challenges similar to field operatio
 ### Program Patterns
 - Strong pre-COVID growth, visible COVID disruption, post-COVID recovery  
 - LA Metro dominates in volume (~42% of installs)  
-- Central Coast has the highest people-served-per-installation ratio (~1.30 people per install)  
+- Central Coast: highest people-served-per-installation ratio (~1.30 people per install)  
 - Weekends outperform weekdays; Sunday highest  
 - Installations and people served strongly correlated (r ≈ 0.73)
 
@@ -99,28 +99,30 @@ These EDA results provide the contextual foundation for the ML component.
 
 ## ML Classification Demonstration (Notebook 4)
 
-This section demonstrates how descriptive insights transition into predictive analytics.
+This section demonstrates supervised classification using synthetic outreach records.
 
 ### Objective
-Identify territories likely to require higher outreach intensity (above-median community impact).
+
+Classify records with above-median people served using other operational attributes.
 
 ### Modeling Steps
-1. **Feature Engineering**  
-   Transforms operational metrics into structured predictors.
+
+1. **Feature Preparation**  
+   Select operational and time-related predictors, excluding the people-served outcome and explicit identifiers.
 
 2. **Target Construction**  
-   `high_risk = 1` for above-median community impact.
+   `high_risk = 1` when a record’s people-served count exceeds the synthetic dataset’s median. Despite its existing variable name, this target represents higher service volume, not measured fire risk or future demand.
 
-3. **Model Training**  
-   - Random Forest classifier  
-   - Stratified train/test split  
-   - Weighted classes to address imbalance  
+3. **Model Training**
+   - Random Forest classifier
+   - Stratified random train/test split
+   - Balanced class weighting
 
 4. **Evaluation**  
-   ROC-AUC used to measure ranking performance.
+   ROC-AUC measures classification ranking performance on held-out synthetic records. This random split does not test forecasting performance on future periods.
 
-5. **Risk Scoring & Ranking**  
-   Each territory receives a `predicted_risk` probability.
+5. **Territory Score Summaries**  
+   Record-level probabilities, stored as `predicted_risk`, are averaged by territory for descriptive comparison. These summaries include training records and are not independently validated territory forecasts.
 
 ### Key Outputs
 - **Feature Importances:**  
